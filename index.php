@@ -8,22 +8,27 @@
   <body>
 
     <?php
-    
+    // PRODUCT CLASS
       class Product{
+
         public $name;
         public $weight;
         public $price;
+
         function __construct($name,$weight,$price){
           $this -> name = $name;
           $this -> weight = $weight;
           $this -> price = $price;
         }
-      }
+      };
 
+      // STORAGE CLASS
       class Storage{
+
         public $name;
         public $adress;
         public $products;
+
         function __construct($name, $adress , $arr = []){
           $this -> name = $name;
           $this -> adress = $adress;
@@ -33,15 +38,17 @@
             $this -> products = [];
           }
         }
+        
+        //PRINT PRODUCT IN STORAGE FUNCTION
         public function printProducts(){
           echo "<h2>" . $this -> name . "</h2>";
           echo "<h5>" . $this -> adress . "</h5><ul>";
-          foreach ( $this -> products as $key =>  $value) {
+          foreach ( $this -> products as  $value) {
             echo "<li>" . $value -> name . " weight : " . $value -> weight . " price : " . $value -> price . "</li>";
           }
           echo "</ul>";
         }
-      }
+      };
 
       $proarr = [];
 
