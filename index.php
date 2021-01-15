@@ -8,6 +8,7 @@
   <body>
 
     <?php
+    
       class Product{
         public $name;
         public $weight;
@@ -34,10 +35,11 @@
         }
         public function printProducts(){
           echo "<h2>" . $this -> name . "</h2>";
-          echo "<h5>" . $this -> adress . "</h5>";
+          echo "<h5>" . $this -> adress . "</h5><ul>";
           foreach ( $this -> products as $key =>  $value) {
-            echo "<ul><li>" . $value -> name . " weight : " . $value -> weight . " price : " . $value -> price . "</li></ul>";
+            echo "<li>" . $value -> name . " weight : " . $value -> weight . " price : " . $value -> price . "</li>";
           }
+          echo "</ul>";
         }
       }
 
@@ -49,13 +51,10 @@
 
       array_push($proarr , $pro1, $pro2 ,$pro3);
 
-      $ferramenta = new Storage('magazzino' , 'via San Carlo 30' , $proarr);
+      $ferramenta = new Storage('magazzino' , 'via San Carlo 30', $proarr);
 
+      $ferramenta-> printProducts();
     ?>
-
-     <?php
-       $ferramenta-> printProducts();
-      ?>
 
   </body>
 </html>
