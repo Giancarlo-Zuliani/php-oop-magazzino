@@ -38,7 +38,7 @@
             $this -> products = [];
           }
         }
-        
+
         //PRINT PRODUCT IN STORAGE FUNCTION
         public function printProducts(){
           echo "<h2>" . $this -> name . "</h2>";
@@ -58,9 +58,9 @@
 
       array_push($proarr , $pro1, $pro2 ,$pro3);
 
-      $ferramenta = new Storage('magazzino' , 'via San Carlo 30', $proarr);
+      $myStorage = new Storage('magazzino' , 'via San Carlo 30', $proarr);
 
-      $ferramenta-> printProducts();
+      $myStorage-> printProducts();
     ?>
 
   </body>
